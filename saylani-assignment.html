@@ -1,18 +1,16 @@
-<!-- SAYLANI ASSIGNMENT -->
-
 <script>
 
 
-  //Q1 STARTS
-  function reverseNumber(n) {
+  //Q1 STARTS HERE
+  function reverse(n) {
     n = n + "";
     return n.split("").reverse().join("");
   }
-  console.log(Number(reverseNumber(32243)));
-  //Q1 ENDS
+  console.log(Number(reverse(11042)));
+  //Q1 ENDS HERE
 
 
-  //Q2 STARTS
+  //Q2 STARTS HERE
   function palindromeCheck(str) {
     var len = str.length;
     var mid = Math.floor(len / 2);
@@ -25,15 +23,15 @@
 
     return true;
   }
-  console.log(palindromeCheck("madam"));
-  //Q2 ENDS
+  console.log(palindromeCheck("MOM"));
+  //Q2 ENDS HERE
 
 
-  //Q3 STARTS
-  function subStrings(str1) {
+  //Q3 STARTS HERE
+  function strings(str1) {
     var array1 = [];
     for (var x = 0, y = 1; x < str1.length; x++, y++) {
-      array1[x] = str1.substring(x, y);
+      array1[x] = str1.string(x, y);
     }
     var combi = [];
     var temp = "";
@@ -52,20 +50,20 @@
     }
     console.log(combi.join("\n"));
   }
-  subStrings("Fog");
-  //Q3 ENDS
+  strings("CAR");
+  //Q3 ENDS HERE
 
 
-  //Q4 STARTS
-  function alphaOrder(str) {
+  //Q4 STARTS HERE
+  function Order(str) {
     return str.split("").sort().join("");
   }
-  console.log(alphaOrder("Loveyou"));
-  // Q4 ENDS
+  console.log(Order("ALPHABET"));
+  // Q4 ENDS HERE
 
 
-  // Q5 STARTS
-  function firstUpper(str) {
+  // Q5 STARTS HERE
+  function upperCase(str) {
     var splitStr = str.toLowerCase().split(" ");
     for (var i = 0; i < splitStr.length; i++) {
       splitStr[i] =
@@ -73,12 +71,12 @@
     }
     return splitStr.join(" ");
   }
-  console.log(firstUpper("Hi my name is adeel"));
-  // Q5 ENDS
+  console.log(upperCase("This is my saylani assignment"));
+  // Q5 ENDS HERE
 
 
-  // Q6 STARTS
-  function longestWord(str) {
+  // Q6 STARTS HERE
+  function longWord(str) {
     var array1 = str.match(/\w[a-z]{0,}/gi);
     var result = array1[0];
 
@@ -89,27 +87,27 @@
     }
     return result;
   }
-  console.log(longestWord("This is saylani assignment"));
-  // Q6 ENDS
+  console.log(longWord("This is a function for identifying the longest word in a sentence"));
+  // Q6 ENDS HERE
 
 
-  // Q7 STARTS
+  // Q7 STARTS HERE
   function vowelCount(str1) {
-    var vowel_list = "aeiouAEIOU";
-    var vcount = 0;
+    var vowel = "aeiouAEIOU";
+    var count = 0;
 
     for (var x = 0; x < str1.length; x++) {
-      if (vowel_list.indexOf(str1[x]) !== -1) {
-        vcount += 1;
+      if (vowel.indexOf(str1[x]) !== -1) {
+        count += 1;
       }
     }
-    return vcount;
+    return count;
   }
-  console.log(vowelCount("Hello"));
-  // Q7 ENDS
+  console.log(vowelCount("Balloons"));
+  // Q7 ENDS HERE
 
 
-  // Q8 STARTS
+  // Q8 STARTS HERE
   function prime(n) {
     if (n === 1) {
       return false;
@@ -124,11 +122,11 @@
       return true;
     }
   }
-  console.log(prime(20));
-  // Q8 ENDS
+  console.log(prime(40));
+  // Q8 ENDS HERE
 
 
-  // Q9 STARTS
+  // Q9 STARTS HERE
   function dataType(value) {
     var dtypes = [Function, RegExp, Number, String, Boolean, Object],
       x,
@@ -142,29 +140,29 @@
     }
     return typeof value;
   }
-  console.log(dataType(12));
-  console.log(dataType("Adeel"));
-  // Q9 ENDS
+  console.log(dataType(9));
+  console.log(dataType("Broom"));
+  // Q9 ENDS HERE
 
 
-  // Q10 STARTS
-  function greatLow(arr_num) {
-    arr_num.sort(function (x, y) {
+  // Q10 STARTS HERE
+  function greatLow(arrayNum) {
+    arrayNum.sort(function (x, y) {
       return x - y;
     });
-    var uniqa = [arr_num[0]];
+    var uniqa = [arrayNum[0]];
     var result = [];
 
-    for (var j = 1; j < arr_num.length; j++) {
-      if (arr_num[j - 1] !== arr_num[j]) {
-        uniqa.push(arr_num[j]);
+    for (var j = 1; j < arrayNum.length; j++) {
+      if (arrayNum[j - 1] !== arrayNum[j]) {
+        uniqa.push(arrayNum[j]);
       }
     }
     result.push(uniqa[1], uniqa[uniqa.length - 2]);
     return result.join(",");
   }
   console.log(greatLow([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
-  // Q10 ENDS
+  // Q10 ENDS HERE
 
   
 </script>
