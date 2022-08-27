@@ -1,0 +1,170 @@
+<!-- SAYLANI ASSIGNMENT -->
+
+<script>
+
+
+  //Q1 STARTS
+  function reverseNumber(n) {
+    n = n + "";
+    return n.split("").reverse().join("");
+  }
+  console.log(Number(reverseNumber(32243)));
+  //Q1 ENDS
+
+
+  //Q2 STARTS
+  function palindromeCheck(str) {
+    var len = str.length;
+    var mid = Math.floor(len / 2);
+
+    for (var i = 0; i < mid; i++) {
+      if (str[i] !== str[len - 1 - i]) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+  console.log(palindromeCheck("madam"));
+  //Q2 ENDS
+
+
+  //Q3 STARTS
+  function subStrings(str1) {
+    var array1 = [];
+    for (var x = 0, y = 1; x < str1.length; x++, y++) {
+      array1[x] = str1.substring(x, y);
+    }
+    var combi = [];
+    var temp = "";
+    var slent = Math.pow(2, array1.length);
+
+    for (var i = 0; i < slent; i++) {
+      temp = "";
+      for (var j = 0; j < array1.length; j++) {
+        if (i & Math.pow(2, j)) {
+          temp += array1[j];
+        }
+      }
+      if (temp !== "") {
+        combi.push(temp);
+      }
+    }
+    console.log(combi.join("\n"));
+  }
+  subStrings("Fog");
+  //Q3 ENDS
+
+
+  //Q4 STARTS
+  function alphaOrder(str) {
+    return str.split("").sort().join("");
+  }
+  console.log(alphaOrder("Loveyou"));
+  // Q4 ENDS
+
+
+  // Q5 STARTS
+  function firstUpper(str) {
+    var splitStr = str.toLowerCase().split(" ");
+    for (var i = 0; i < splitStr.length; i++) {
+      splitStr[i] =
+        splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    return splitStr.join(" ");
+  }
+  console.log(firstUpper("Hi my name is adeel"));
+  // Q5 ENDS
+
+
+  // Q6 STARTS
+  function longestWord(str) {
+    var array1 = str.match(/\w[a-z]{0,}/gi);
+    var result = array1[0];
+
+    for (var x = 1; x < array1.length; x++) {
+      if (result.length < array1[x].length) {
+        result = array1[x];
+      }
+    }
+    return result;
+  }
+  console.log(longestWord("This is saylani assignment"));
+  // Q6 ENDS
+
+
+  // Q7 STARTS
+  function vowelCount(str1) {
+    var vowel_list = "aeiouAEIOU";
+    var vcount = 0;
+
+    for (var x = 0; x < str1.length; x++) {
+      if (vowel_list.indexOf(str1[x]) !== -1) {
+        vcount += 1;
+      }
+    }
+    return vcount;
+  }
+  console.log(vowelCount("Hello"));
+  // Q7 ENDS
+
+
+  // Q8 STARTS
+  function prime(n) {
+    if (n === 1) {
+      return false;
+    } else if (n === 2) {
+      return true;
+    } else {
+      for (var x = 2; x < n; x++) {
+        if (n % x === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+  }
+  console.log(prime(20));
+  // Q8 ENDS
+
+
+  // Q9 STARTS
+  function dataType(value) {
+    var dtypes = [Function, RegExp, Number, String, Boolean, Object],
+      x,
+      len;
+    if (typeof value === "object" || typeof value === "function") {
+      for (x = 0, len = dtypes.length; x < len; x++) {
+        if (value instanceof dtypes[x]) {
+          return dtypes[x];
+        }
+      }
+    }
+    return typeof value;
+  }
+  console.log(dataType(12));
+  console.log(dataType("Adeel"));
+  // Q9 ENDS
+
+
+  // Q10 STARTS
+  function greatLow(arr_num) {
+    arr_num.sort(function (x, y) {
+      return x - y;
+    });
+    var uniqa = [arr_num[0]];
+    var result = [];
+
+    for (var j = 1; j < arr_num.length; j++) {
+      if (arr_num[j - 1] !== arr_num[j]) {
+        uniqa.push(arr_num[j]);
+      }
+    }
+    result.push(uniqa[1], uniqa[uniqa.length - 2]);
+    return result.join(",");
+  }
+  console.log(greatLow([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+  // Q10 ENDS
+
+  
+</script>
